@@ -13,14 +13,19 @@ public class RTSController : MonoBehaviour
     private Vector3 startPosition;
     private List<Unit> selectedUnitList;
 
+    private BuildingManager buildingManager;
+
     private void Awake() {
         selectedUnitList = new List<Unit>();
+        buildingManager = GetComponent<BuildingManager>();
         SetSelectionAreaActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(buildingManager.BuildingData) return;
+
         if (Input.GetMouseButtonDown(0)){
             SetSelectionAreaActive(true);
             startPosition = Functional.GetMouseWorldPosition();
