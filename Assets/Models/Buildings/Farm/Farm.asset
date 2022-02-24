@@ -16,5 +16,5 @@ MonoBehaviour:
   prefab: {fileID: 4964015627839028016, guid: be714671cdb9e4c67a1ffba60f4f693e, type: 3}
   sprite: {fileID: 21300000, guid: 781d193ebdef94ab5be5f0cf814e5830, type: 3}
   resourceGeneratorData:
-    duration: 2
+    duration: 5
     resourceData: {fileID: 11400000, guid: b68c0736b51fa4d1c8f7a4cc210b3c3e, type: 2}
