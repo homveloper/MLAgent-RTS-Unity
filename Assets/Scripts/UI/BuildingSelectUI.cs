@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class BuildingSelectUI : MonoBehaviour
 {
-    [SerializeField] private List<BuildingData> buildingDataList;
     [SerializeField] private BuildingManager buildingManager;
+    private BuildingDataList buildingDataList;
     
     private Dictionary<BuildingData, Transform> buildingButtonDict;
 
@@ -16,8 +16,10 @@ public class BuildingSelectUI : MonoBehaviour
 
         buildingButtonDict = new Dictionary<BuildingData, Transform>();
 
+        buildingDataList = Resources.Load<BuildingDataList>(AssetPath.BuildingDataList);
+
         int idx = 0;
-        foreach(BuildingData buildingData in buildingDataList)
+        foreach(BuildingData buildingData in buildingDataList.List)
        {
             Transform button_buildingTransform = Instantiate(button_buildingTemplate, transform);
             button_buildingTransform.gameObject.SetActive(true);

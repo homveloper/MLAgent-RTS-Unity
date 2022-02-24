@@ -13,7 +13,7 @@ namespace MLRTS.Unit
         Archor
     }
 
-    [CreateAssetMenu(fileName ="New Unit", menuName ="Unit/New Unit")]
+    [CreateAssetMenu(fileName ="New UnitData", menuName ="RTS/UnitData")]
     public class UnitData : ScriptableObject
     {
         public UnitType unitType;
