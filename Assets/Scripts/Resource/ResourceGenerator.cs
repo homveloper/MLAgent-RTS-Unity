@@ -22,7 +22,7 @@ public class ResourceGenerator : MonoBehaviour
         if (currentTime <= 0f)
         {
             currentTime = duration;
-            TestMsg();
+            // TestMsg();
             ResourceManager.Instance.AddResource(buildingData.ResourceGeneratorData.resourceData, 1);
         }
     }

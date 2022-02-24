@@ -23,9 +23,9 @@ public class ResourceUI : MonoBehaviour
 
             resourceTransformDict[resourceData] = resourceTransform;
             
-            float offsetAmount = -80f;
-            resourceTransform.GetComponent<RectTransform>().anchoredPosition = new Vector2(offsetAmount * idx -80f, 0 );
-            resourceTransform.GetComponentInChildren<Image>().sprite = resourceData.Sprite;
+            float offsetAmount = -60f;
+            resourceTransform.GetComponent<RectTransform>().anchoredPosition = new Vector2(offsetAmount * idx -40f, 0 );
+            resourceTransform.Find("Image").GetComponent<Image>().sprite = resourceData.Sprite;
             idx++;
         }
     }
