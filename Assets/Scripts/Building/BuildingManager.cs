@@ -6,10 +6,16 @@ using ToToMo.Utiltiy;
 
 public class BuildingManager : MonoBehaviour
 {
-    [SerializeField] private BuildingData buildingData; 
+    public static BuildingManager Instance {get; private set;}
+
+    [SerializeField] private BuildingData buildingData;
+    
+    private void Awake() {
+        Instance = this;
+    }
 
     private void Update() {
-        if(Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()){
+        if(Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() && buildingData != null){
             Vector3 mousePosition = Functional.GetMouseWorldPosition();
             if(IsValidBuildPosition(buildingData, mousePosition)){
                 Instantiate(buildingData.Building, mousePosition, Quaternion.identity);
